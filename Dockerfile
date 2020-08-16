@@ -1,5 +1,5 @@
 # DOCKER-VERSION 0.10.0
-FROM ubuntu:14.04
+FROM ubuntu:18.04.4
 
 RUN apt-get update && \
     apt-get install -y sudo curl openssh-client ruby git wget build-essential \
@@ -26,7 +26,7 @@ VOLUME ["/src"]
 
 # Install Node
 RUN   \
-  wget -O - http://nodejs.org/dist/v0.10.29/node-v0.10.29-linux-x64.tar.gz \
+  wget -O - https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz \
   | tar xzf - --strip-components=1 --exclude="README.md" --exclude="LICENSE" \
   --exclude="ChangeLog" -C "/usr/local"
 
